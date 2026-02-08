@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC Store</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <!-- LOGO -->
+    <div class="header-left">
+      <h1 id="app-title">PC Store</h1>
+    </div>
+
+    <!-- BUSCADOR -->
+    <input type="text" id="search-input" placeholder="Buscar productos..." />
+
+    <!-- CONTROLES DERECHA -->
+    <div class="header-right">
+
+      <!-- Idioma -->
+      <select id="lang-select" class="select-lang">
+        <option value="es">🇦🇷 ES</option>
+        <option value="en">🇺🇸 EN</option>
+      </select>
+
+      <!-- Moneda -->
+      <select id="currency-select" class="select-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="ARS">ARS</option>
+      </select>
+
+      <!-- Carrito -->
+      <button id="cart-button" class="cart-btn">
+        🛒 <span id="cart-count">0</span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <main class="main">
+    <section class="filters">
+      <select id="category-filter">
+        <option value="all">Todos</option>
+        <option value="cpu">CPU</option>
+        <option value="ram">RAM</option>
+        <option value="perifericos">Periféricos</option>
+      </select>
+
+      <input type="range" id="price-filter" min="0" max="5000" value="5000" />
+      <span id="price-value">$5000</span>
+    </section>
+
+
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="products" class="products-grid"></section>
+
+  </main>
+
+
+  <!-- CARRITO -->
+  <aside id="cart" class="cart">
+
+    <header class="cart__header">
+      <h2></h2>
+      <button id="cart-close">✕</button>
+    </header>
+
+    <ul id="cart-items" class="cart__items"></ul>
+
+    <footer class="cart__footer">
+      <p>
+        <span id="cart-total-label">Total</span>:
+        <strong id="cart-total">$0</strong>
+      </p>
+
+      <button id="checkout-btn" class="btn-primary"></button>
+    </footer>
+
+  </aside>
+
+
+  <!-- MODAL CHECKOUT -->
+  <div id="checkout-modal" class="modal hidden">
+    <div class="modal__content">
+      <h2 id="checkout-title">Order Summary</h2>
+      <ul id="checkout-items"></ul>
+      <p>
+        <span id="checkout-total-label">Total</span>:
+        <strong id="checkout-total"></strong>
+      </p>
+      <button id="confirm-order" class="btn-primary">Confirm</button>
+    </div>
+  </div>
+
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
